@@ -2,7 +2,6 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
 
 export function NewsletterSection() {
     const t = useTranslations("newsletter");
@@ -33,7 +32,7 @@ export function NewsletterSection() {
                 <div className="relative z-10">
                     <h2 className="text-[#0a0a0a] text-4xl md:text-5xl font-black mb-6 leading-tight uppercase">
                         {t("title")}
-                        <span className="text-[10px] font-mono text-[#0a0a0a]/40 ml-2 uppercase">// {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
+                        <span className="text-[10px] font-mono text-[#0a0a0a]/40 ml-2 uppercase">{"//"} {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
                     </h2>
                     <p className="text-[#0a0a0a]/70 text-lg mb-12 max-w-lg mx-auto font-medium">
                         {t("subtitle")}

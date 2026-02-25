@@ -21,7 +21,7 @@ export function TechSection() {
                     {t.rich("title", {
                         span: (chunks) => <span className="text-primary">{chunks}</span>
                     })}
-                    <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">// {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
+                    <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">{"//"} {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

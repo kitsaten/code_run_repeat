@@ -14,7 +14,7 @@ export function StatsSection() {
                         <h3 className="text-sm font-bold text-primary tracking-widest uppercase mb-2">{t("badge")}</h3>
                         <h2 className="text-3xl font-bold text-white">
                             {t("title")}
-                            <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">// {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
+                            <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">{"//"} {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
                         </h2>
                     </div>
                     <div className="text-slate-500 text-sm font-mono tracking-tighter">{t("last_updated")}</div>

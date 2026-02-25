@@ -31,7 +31,7 @@ export function AboutSection() {
                         {t.rich("headline", {
                             span: (chunks) => <span className="text-primary">{chunks}</span>
                         })}
-                        <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">// {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
+                        <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">{"//"} {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
                     </h2>
 
                     <p className="text-lg text-slate-400 leading-relaxed">

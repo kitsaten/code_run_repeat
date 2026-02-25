@@ -32,8 +32,7 @@ export function TrainingLogSection() {
                 <div className="mb-12">
                     <h2 className="text-4xl font-bold text-white mb-8">
                         {t("title")}
-                        <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">// {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
-                        <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">// {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
+                        <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">{"//"} {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
                     </h2>
 
                     <div className="flex flex-wrap items-center gap-6 border-b border-white/5 pb-6 mb-8 text-xs font-bold tracking-widest uppercase">

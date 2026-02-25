@@ -26,7 +26,7 @@ export function BlogPreviewSection() {
                 <div className="flex justify-between items-end mb-16">
                     <h2 className="text-4xl font-bold text-white">
                         {t("title")}
-                        <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">// {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
+                        <span className="text-[10px] font-mono text-slate-600 ml-2 uppercase">{"//"} {locale === "vi" ? "VN" : locale.toUpperCase()}</span>
                     </h2>
                     <Link href={`/${locale}/blog`} className="text-primary text-sm font-bold tracking-widest uppercase hover:underline">
                         {t("view_all")}
