@@ -1,0 +1,133 @@
+{
+    "nav": {
+        "journey": "Hành Trình",
+        "logs": "Nhật Ký",
+        "stats": "Thống Kê",
+        "community": "Cộng Đồng",
+        "connect": "KẾT NỐI"
+    },
+    "hero": {
+        "title": "CODE. RUN. REPEAT.",
+        "subtitle": "Xây dựng phần mềm vào ban ngày. Rèn luyện sức bền vào ban đêm. Một cách tiếp cận dựa trên dữ liệu để sống hiệu suất cao.",
+        "cta_primary": "KHÁM PHÁ HÀNH TRÌNH CHẠY",
+        "cta_secondary": "ĐỌC NHẬT KÝ TẬP LUYỆN"
+    },
+    "about": {
+        "headline": "Giao điểm của Lý Trí & Ý Chí.",
+        "body": "Tôi tin rằng kỷ luật cần thiết để debug một hệ thống phân tán phức tạp cũng chính là kỷ luật cần thiết để vượt qua km thứ 35 của một chặng marathon. Cách tiếp cận của tôi với cả hai: bài bản, lặp đi lặp lại và không bỏ cuộc.",
+        "traits": [
+            {
+                "icon": "terminal",
+                "label": "Kỹ sư phần mềm (Senior/Lead)"
+            },
+            {
+                "icon": "directions_run",
+                "label": "Đam mê Marathon & Ultra Runner"
+            },
+            {
+                "icon": "query_stats",
+                "label": "Tư duy tập luyện dựa trên dữ liệu"
+            },
+            {
+                "icon": "psychology",
+                "label": "AI & Tối ưu hóa hiệu suất"
+            }
+        ]
+    },
+    "stats": {
+        "badge": "Chỉ Số Trực Tiếp",
+        "title": "Bảng Điều Khiển Hiệu Suất",
+        "last_updated": "CẬP NHẬT: 2 GIỜ TRƯỚC",
+        "total_distance": "Tổng Quãng Đường",
+        "weekly_mileage": "Mileage Tuần",
+        "current_pace": "Pace Hiện Tại",
+        "marathon_pr": "PR Marathon",
+        "total_elevation": "Tổng Độ Cao",
+        "active_streak": "Chuỗi Hoạt Động",
+        "last_run": "Lần Chạy Cuối",
+        "shoes": "Theo Dõi Giày",
+        "unit_km": "km",
+        "unit_m": "m",
+        "unit_days": "Ngày",
+        "unit_pace": "/km",
+        "status_steady": "TIẾN TRIỂN ỔN ĐỊNH",
+        "status_boston": "ĐỦ TIÊU CHUẨN BOSTON",
+        "status_climbing": "LEO DỐC ỔN ĐỊNH",
+        "status_heat": "ĐANG SUNG SỨC"
+    },
+    "tech": {
+        "title": "Kỹ Thuật Của Hiệu Suất",
+        "cards": [
+            {
+                "title": "Tập Luyện Dựa Trên Dữ Liệu",
+                "body": "Xem biến thiên nhịp tim và VO2 Max như độ trễ của server. Theo dõi liên tục, điều chỉnh không ngừng."
+            },
+            {
+                "title": "Hệ Thống Thói Quen",
+                "body": "Xây dựng giao thức tập luyện tự vận hành. Loại bỏ sự mệt mỏi trong quyết định bằng tính nhất quán theo thuật toán."
+            },
+            {
+                "title": "Công Cụ Hiệu Suất",
+                "body": "Script tùy chỉnh và nền tảng mã nguồn mở để trực quan hóa dữ liệu Strava và dự đoán phong độ ngày đua."
+            }
+        ]
+    },
+    "training_log": {
+        "title": "Nhật Ký Tập Luyện Chi Tiết",
+        "filters": {
+            "all": "Tất Cả Hoạt Động",
+            "workouts": "Bài Tập",
+            "long_runs": "Chạy Dài",
+            "races": "Giải Đua",
+            "filter_month": "LỌC THEO THÁNG"
+        },
+        "table": {
+            "date": "Ngày",
+            "activity": "Tên Hoạt Động",
+            "distance": "Quãng Đường",
+            "time": "Thời Gian",
+            "pace": "Pace TB",
+            "elevation": "Độ Cao",
+            "effort": "Nỗ Lực/HR",
+            "status": "Trạng Thái"
+        },
+        "load_more": "TẢI THÊM DỮ LIỆU"
+    },
+    "blog": {
+        "title": "Mới Nhất Từ Nhật Ký",
+        "view_all": "Xem Tất Cả Bài Viết",
+        "posts": [
+            {
+                "title": "Chiến Lược Tập Luyện Cho Kỹ Sư Async",
+                "excerpt": "Cách cân bằng các phiên lập trình tập trung cao với nền tảng aerobic zone 2.",
+                "tag": "Tập Luyện"
+            },
+            {
+                "title": "Tech Stack 2024 Dành Cho Người Chạy Bộ",
+                "excerpt": "Đánh giá các cảm biến và phần mềm thực sự cung cấp thông tin có giá trị hành động.",
+                "tag": "Công Nghệ"
+            },
+            {
+                "title": "Tái Cấu Trúc Form Chạy Bộ Của Tôi",
+                "excerpt": "Ứng dụng nguyên tắc kỹ thuật vào tối ưu hóa sinh cơ học và phòng ngừa chấn thương.",
+                "tag": "Form Chạy"
+            }
+        ]
+    },
+    "newsletter": {
+        "title": "GIA NHẬP CỘNG ĐỒNG DEV RUNNERS",
+        "subtitle": "Thông tin hàng tuần về hiệu suất, công nghệ và tư duy marathon. Không spam, chỉ có dữ liệu.",
+        "placeholder": "NHẬP EMAIL CỦA BẠN",
+        "cta": "Đăng Ký"
+    },
+    "footer": {
+        "copyright": "© 2024 PERSISTENCE PROTOCOL. BẢO LƯU MỌI QUYỀN.",
+        "github": "GITHUB",
+        "strava": "STRAVA",
+        "linkedin": "LINKEDIN"
+    },
+    "meta": {
+        "title": "Code. Run. Repeat. | Kỹ Thuật Hiệu Suất",
+        "description": "Xây dựng phần mềm vào ban ngày. Rèn luyện sức bền vào ban đêm. Một cách tiếp cận dựa trên dữ liệu để sống hiệu suất cao."
+    }
+}

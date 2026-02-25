@@ -1,0 +1,133 @@
+{
+    "nav": {
+        "journey": "歩み",
+        "logs": "ログ",
+        "stats": "統計",
+        "community": "コミュニティ",
+        "connect": "接続"
+    },
+    "hero": {
+        "title": "CODE. RUN. REPEAT.",
+        "subtitle": "昼はソフトウェアを構築し、夜は持久力を鍛える。データ駆動型の高パフォーマンスな生き方。",
+        "cta_primary": "ランニングの旅を探索する",
+        "cta_secondary": "トレーニングログを読む"
+    },
+    "about": {
+        "headline": "論理と根性の交差点。",
+        "body": "複雑な分散システムをデバッグするために必要なディシプリンは、マラソンの35km地点を乗り越えるために必要なディシプリンと同じだと信じています。どちらへのアプローチも、体系的で、反復的で、容赦のないものです。",
+        "traits": [
+            {
+                "icon": "terminal",
+                "label": "ソフトウェアエンジニア (シニア/リード)"
+            },
+            {
+                "icon": "directions_run",
+                "label": "マラソン愛好家 & ウルトラランナー"
+            },
+            {
+                "icon": "query_stats",
+                "label": "データドリブントレーニング思考"
+            },
+            {
+                "icon": "psychology",
+                "label": "AI & パフォーマンス最適化"
+            }
+        ]
+    },
+    "stats": {
+        "badge": "ライブメトリクス",
+        "title": "パフォーマンスダッシュボード",
+        "last_updated": "最終更新: 2時間前",
+        "total_distance": "累計距離",
+        "weekly_mileage": "週間走行距離",
+        "current_pace": "現在のペース",
+        "marathon_pr": "マラソン自己ベスト",
+        "total_elevation": "累計獲得標高",
+        "active_streak": "連続活動日数",
+        "last_run": "最終ラン",
+        "shoes": "シュートラッキング",
+        "unit_km": "km",
+        "unit_m": "m",
+        "unit_days": "日",
+        "unit_pace": "/km",
+        "status_steady": "着実な進歩",
+        "status_boston": "ボストン資格取得",
+        "status_climbing": "安定したクライミング",
+        "status_heat": "絶好調"
+    },
+    "tech": {
+        "title": "パフォーマンスのエンジニアリング",
+        "cards": [
+            {
+                "title": "データドリブントレーニング",
+                "body": "心拍変動とVO2 Maxをサーバーのレイテンシのように扱う。常にモニタリングし、常に調整する。"
+            },
+            {
+                "title": "習慣システム",
+                "body": "オートパイロットで動くトレーニングプロトコルを構築する。アルゴリズム的な一貫性により意思決定疲れを排除する。"
+            },
+            {
+                "title": "パフォーマンスツール",
+                "body": "Stravaデータを可視化し、レース当日のピーク状態を予測するカスタムスクリプトとオープンソーススタック。"
+            }
+        ]
+    },
+    "training_log": {
+        "title": "詳細なトレーニングログ",
+        "filters": {
+            "all": "すべての活動",
+            "workouts": "ワークアウト",
+            "long_runs": "ロングラン",
+            "races": "レース",
+            "filter_month": "月ごとに絞り込む"
+        },
+        "table": {
+            "date": "日付",
+            "activity": "活動名",
+            "distance": "距離",
+            "time": "タイム",
+            "pace": "平均ペース",
+            "elevation": "獲得標高",
+            "effort": "努力/心拍",
+            "status": "ステータス"
+        },
+        "load_more": "さらにデータを読み込む"
+    },
+    "blog": {
+        "title": "ログの最新記事",
+        "view_all": "すべての投稿を見る",
+        "posts": [
+            {
+                "title": "非同期エンジニアのためのトレーニング戦略",
+                "excerpt": "高集中のコーディングセッションとゾーン2有酸素基礎トレーニングのバランスの取り方。",
+                "tag": "トレーニング"
+            },
+            {
+                "title": "ランナーのための2024年テックスタック",
+                "excerpt": "実際に実用的なインサイトを提供するセンサーとソフトウェアのレビュー。",
+                "tag": "テック"
+            },
+            {
+                "title": "ランニングフォームのリファクタリング",
+                "excerpt": "バイオメカニクスの最適化とケガ予防にエンジニアリングの原則を適用する。",
+                "tag": "フォーム"
+            }
+        ]
+    },
+    "newsletter": {
+        "title": "DEV RUNNERSコミュニティに参加する",
+        "subtitle": "パフォーマンス、テック、マラソン思考に関する週次インサイト。スパムなし、純粋なデータのみ。",
+        "placeholder": "メールアドレスを入力",
+        "cta": "登録する"
+    },
+    "footer": {
+        "copyright": "© 2024 PERSISTENCE PROTOCOL. 全著作権所有。",
+        "github": "GITHUB",
+        "strava": "STRAVA",
+        "linkedin": "LINKEDIN"
+    },
+    "meta": {
+        "title": "Code. Run. Repeat. | パフォーマンスエンジニアリング",
+        "description": "昼はソフトウェアを構築し、夜は持久力を鍛える。データ駆動型の高パフォーマンスな生き方。"
+    }
+}

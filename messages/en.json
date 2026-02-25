@@ -1,0 +1,133 @@
+{
+    "nav": {
+        "journey": "Journey",
+        "logs": "Logs",
+        "stats": "Stats",
+        "community": "Community",
+        "connect": "CONNECT"
+    },
+    "hero": {
+        "title": "CODE. RUN. REPEAT.",
+        "subtitle": "Building software by day. Building endurance by night. A data-driven approach to high-performance living.",
+        "cta_primary": "EXPLORE MY RUNNING JOURNEY",
+        "cta_secondary": "READ TRAINING LOGS"
+    },
+    "about": {
+        "headline": "The intersection of Logic & Grit.",
+        "body": "I believe that the discipline required to debug complex distributed systems is the same discipline needed to push through mile 22 of a marathon. My approach to both is clinical, iterative, and relentless.",
+        "traits": [
+            {
+                "icon": "terminal",
+                "label": "Software Engineer (Senior/Lead)"
+            },
+            {
+                "icon": "directions_run",
+                "label": "Marathon Enthusiast & Ultra Runner"
+            },
+            {
+                "icon": "query_stats",
+                "label": "Data-driven training mindset"
+            },
+            {
+                "icon": "psychology",
+                "label": "AI & Performance optimization"
+            }
+        ]
+    },
+    "stats": {
+        "badge": "Live Metrics",
+        "title": "Performance Dashboard",
+        "last_updated": "LAST UPDATED: 2H AGO",
+        "total_distance": "Total Distance",
+        "weekly_mileage": "Weekly Mileage",
+        "current_pace": "Current Pace",
+        "marathon_pr": "Marathon PR",
+        "total_elevation": "Total Elevation",
+        "active_streak": "Active Streak",
+        "last_run": "Last Run",
+        "shoes": "Shoes Tracking",
+        "unit_km": "km",
+        "unit_m": "m",
+        "unit_days": "Days",
+        "unit_pace": "/km",
+        "status_steady": "STEADY PROGRESSION",
+        "status_boston": "BOSTON QUALIFIED",
+        "status_climbing": "CLIMBING STEADY",
+        "status_heat": "HEAT IS ON"
+    },
+    "tech": {
+        "title": "The Engineering of Performance",
+        "cards": [
+            {
+                "title": "Data-driven Training",
+                "body": "Treating heart rate variability and VO2 Max like server latency. Constant monitoring, constant adjustment."
+            },
+            {
+                "title": "Habit System",
+                "body": "Building a training protocol that runs on autopilot. Removing decision fatigue through algorithmic consistency."
+            },
+            {
+                "title": "Performance Tools",
+                "body": "Custom scripts and open-source stacks to visualize Strava data and predict peak race-day readiness."
+            }
+        ]
+    },
+    "training_log": {
+        "title": "Detailed Training Log",
+        "filters": {
+            "all": "All Activities",
+            "workouts": "Workouts",
+            "long_runs": "Long Runs",
+            "races": "Races",
+            "filter_month": "FILTER BY MONTH"
+        },
+        "table": {
+            "date": "Date",
+            "activity": "Activity Name",
+            "distance": "Distance",
+            "time": "Time",
+            "pace": "Avg Pace",
+            "elevation": "Elevation",
+            "effort": "Effort/HR",
+            "status": "Status"
+        },
+        "load_more": "LOAD MORE DATA"
+    },
+    "blog": {
+        "title": "Latest from the Log",
+        "view_all": "View All Posts",
+        "posts": [
+            {
+                "title": "Training Strategies for the Async Engineer",
+                "excerpt": "How to balance high-focus coding sessions with zone 2 aerobic base building.",
+                "tag": "Training"
+            },
+            {
+                "title": "The 2024 Tech Stack for Runners",
+                "excerpt": "Reviewing the sensors and software that actually provide actionable insights.",
+                "tag": "Tech"
+            },
+            {
+                "title": "Refactoring My Running Form",
+                "excerpt": "Applying engineering principles to biomechanical optimization and injury prevention.",
+                "tag": "Form"
+            }
+        ]
+    },
+    "newsletter": {
+        "title": "JOIN THE DEV RUNNERS COMMUNITY",
+        "subtitle": "Weekly insights on performance, tech, and the marathon mindset. No spam, just pure data.",
+        "placeholder": "ENTER YOUR EMAIL",
+        "cta": "Subscribe"
+    },
+    "footer": {
+        "copyright": "© 2024 PERSISTENCE PROTOCOL. ALL RIGHTS RESERVED.",
+        "github": "GITHUB",
+        "strava": "STRAVA",
+        "linkedin": "LINKEDIN"
+    },
+    "meta": {
+        "title": "Code. Run. Repeat. | Performance Engineering",
+        "description": "Building software by day. Building endurance by night. A data-driven approach to high-performance living."
+    }
+}

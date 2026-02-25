@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    /* #0a0a0a */
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6.3%;
+    /* #1a1a1a */
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 102 100% 54%;
+    /* #38ff14 */
+    --primary-foreground: 0 0% 3.9%;
+    --secondary: 0 0% 10.2%;
+    /* #1a1a1a */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 16.5%;
+    /* #2a2a2a */
+    --input: 0 0% 14.9%;
+    --ring: 102 100% 54%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary selection:text-background;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.glass-card {
+  background: rgba(26, 26, 26, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.motion-bg {
+  background: radial-gradient(circle at 50% 50%, rgba(56, 255, 20, 0.05) 0%, rgba(10, 10, 10, 1) 70%);
+}
+
+.hero-lines {
+  background-image: repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(56, 255, 20, 0.03) 40px, rgba(56, 255, 20, 0.03) 41px);
+}
+
+.container-custom {
+  @apply mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8;
+}
+
+/* Typography Scale */
+h1 {
+  @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+h2 {
+  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0;
+}
+
+h3 {
+  @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+}
+
+p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}

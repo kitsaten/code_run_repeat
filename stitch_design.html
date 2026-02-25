@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Code. Run. Repeat. | Performance Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#38ff14",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#0a0a0a",
+                        "neutral-dark": "#1a1a1a",
+                        "border-dark": "#2a2a2a"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .motion-bg {
+            background: radial-gradient(circle at 50% 50%, rgba(56, 255, 20, 0.05) 0%, rgba(10, 10, 10, 1) 70%);
+        }
+        .hero-lines {
+            background-image: repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(56, 255, 20, 0.03) 40px, rgba(56, 255, 20, 0.03) 41px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-background-dark">
+<!-- Navigation -->
+<nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="text-primary font-black text-xl tracking-tighter">CODE. RUN. REPEAT.</span>
+</div>
+<div class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide uppercase text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Journey</a>
+<a class="hover:text-primary transition-colors" href="#">Logs</a>
+<a class="hover:text-primary transition-colors" href="#">Stats</a>
+<a class="hover:text-primary transition-colors" href="#">Community</a>
+</div>
+<div>
+<div class="hidden sm:inline-flex items-center gap-4 mr-6">
+<div class="relative group">
+<button class="flex items-center gap-2 text-slate-400 hover:text-primary transition-colors text-xs font-bold tracking-widest uppercase">
+<span class="material-symbols-outlined text-lg">language</span>
+<span>EN</span>
+<span class="material-symbols-outlined text-xs">expand_more</span>
+</button>
+<div class="absolute right-0 mt-2 w-24 bg-neutral-dark border border-white/10 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 overflow-hidden">
+<a class="block px-4 py-3 text-[10px] font-bold text-primary bg-white/5 border-l-2 border-primary tracking-widest" href="#">EN</a>
+<a class="block px-4 py-3 text-[10px] font-bold text-slate-400 hover:text-white hover:bg-white/5 tracking-widest transition-colors" href="#">VN</a>
+<a class="block px-4 py-3 text-[10px] font-bold text-slate-400 hover:text-white hover:bg-white/5 tracking-widest transition-colors" href="#">JP</a>
+</div>
+</div>
+</div><button class="bg-primary text-background-dark px-5 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+                    CONNECT
+                </button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden motion-bg hero-lines">
+<div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+<h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-6 text-white leading-none">CODE. RUN.<br/><span class="text-primary">REPEAT.</span> <span class="text-[20px] align-top text-white/20 font-mono font-normal ml-2">[EN]</span></h1>
+<p class="text-xl md:text-2xl text-slate-400 font-light mb-12 max-w-2xl mx-auto">
+                Building software by day. Building endurance by night. A data-driven approach to high-performance living.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto px-8 py-4 bg-primary text-background-dark font-black rounded-lg text-lg hover:scale-[1.02] transition-transform">
+                    EXPLORE MY RUNNING JOURNEY
+                </button>
+<button class="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded-lg text-lg hover:bg-white/5 transition-colors">
+                    READ TRAINING LOGS
+                </button>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative group">
+<div class="absolute -inset-2 bg-primary/20 rounded-xl blur-2xl group-hover:bg-primary/30 transition-all"></div>
+<div class="relative bg-neutral-dark rounded-xl overflow-hidden aspect-[4/5] border border-white/10">
+<img class="w-full h-full object-cover grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700" data-alt="Moody professional portrait of a software engineer runner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM-z9tFPjdX9K6Ox_Qqbmjgbf6GnnJYmIifC_V1Rfo5_gCWiyT7a0C6QPlBz-1PagEwpXpclTBNOZ-zDKkzHcJeKstByzfz3BjU5GnOnzfxjwW_E55sYHhhItLQMg5tH_Q9hzP9_tzIhB6NDvQEkFovWRHyGvCj-w2bxhqOaTochLYeZRl8mlBiIWOnBOFiWznFMIWalUF66dqXbgZbhpunGXondt7WUl_8beJR6KscpobkVcUMPsK7H1KrUsZDWMU_4LfDcHVcog"/>
+</div>
+</div>
+<div class="space-y-8">
+<h2 class="text-4xl md:text-5xl font-bold text-white tracking-tight">The intersection of <span class="text-primary">Logic &amp; Grit.</span><span class="text-[10px] font-mono text-slate-600 ml-2">// EN</span></h2>
+<p class="text-lg text-slate-400 leading-relaxed">
+                    I believe that the discipline required to debug complex distributed systems is the same discipline needed to push through mile 22 of a marathon. My approach to both is clinical, iterative, and relentless.
+                </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">terminal</span>
+<span class="text-slate-200 font-medium">Software Engineer (Senior/Lead)</span>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">directions_run</span>
+<span class="text-slate-200 font-medium">Marathon Enthusiast &amp; Ultra Runner</span>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">query_stats</span>
+<span class="text-slate-200 font-medium">Data-driven training mindset</span>
+</li>
+<li class="flex items-center gap-4 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">psychology</span>
+<span class="text-slate-200 font-medium">AI &amp; Performance optimization</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Stats Dashboard -->
+<section class="py-24 bg-neutral-dark/30">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h3 class="text-sm font-bold text-primary tracking-widest uppercase mb-2">Live Metrics</h3>
+<h2 class="text-3xl font-bold text-white">Performance Dashboard<span class="text-[10px] font-mono text-slate-600 ml-2">// EN</span></h2>
+</div>
+<div class="text-slate-500 text-sm font-mono tracking-tighter">LAST UPDATED: 2H AGO</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Stat Card 1 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Total Distance</p>
+<p class="text-4xl font-black text-white mb-4">2,450 <span class="text-lg font-normal text-slate-500">km</span></p>
+<div class="h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Weekly Mileage</p>
+<p class="text-4xl font-black text-white mb-2">65 <span class="text-lg font-normal text-slate-500">km</span></p>
+<div class="h-12 w-full flex items-end gap-1">
+<div class="w-full bg-primary/20 h-1/2 rounded-t-sm"></div>
+<div class="w-full bg-primary/40 h-2/3 rounded-t-sm"></div>
+<div class="w-full bg-primary/30 h-1/3 rounded-t-sm"></div>
+<div class="w-full bg-primary/60 h-3/4 rounded-t-sm"></div>
+<div class="w-full bg-primary h-full rounded-t-sm"></div>
+<div class="w-full bg-primary/50 h-2/3 rounded-t-sm"></div>
+<div class="w-full bg-primary/20 h-1/4 rounded-t-sm"></div>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Current Pace</p>
+<p class="text-4xl font-black text-white mb-4">4:30 <span class="text-lg font-normal text-slate-500">/km</span></p>
+<div class="flex items-center gap-2 text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        STEADY PROGRESSION
+                    </div>
+</div>
+<!-- Stat Card 4 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Marathon PR</p>
+<p class="text-4xl font-black text-white mb-4">3:15:00</p>
+<div class="flex items-center gap-2 text-slate-500 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">military_tech</span>
+                        BOSTON QUALIFIED
+                    </div>
+</div><!-- Stat Card 5 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Total Elevation</p>
+<p class="text-4xl font-black text-white mb-4">12,450 <span class="text-lg font-normal text-slate-500">m</span></p>
+<div class="flex items-center gap-2 text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-sm">north_east</span>
+        CLIMBING STEADY
+    </div>
+</div><!-- Stat Card 6 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Active Streak</p>
+<p class="text-4xl font-black text-white mb-4">14 <span class="text-lg font-normal text-slate-500">Days</span></p>
+<div class="flex items-center gap-2 text-orange-500 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">local_fire_department</span>
+        HEAT IS ON
+    </div>
+</div><!-- Stat Card 7 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Last Run</p>
+<p class="text-xl font-bold text-white mb-1">12.5 km | 5:10/km</p>
+<p class="text-slate-500 text-xs font-mono uppercase">2 hours ago</p>
+</div><!-- Stat Card 8 -->
+<div class="glass-card p-8 rounded-xl">
+<p class="text-slate-400 text-sm font-medium mb-1">Shoes Tracking</p>
+<p class="text-xl font-bold text-white mb-4">Alphafly 3 <span class="text-primary">- 340km</span></p>
+<div class="h-1 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40 w-[42%]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Tech + Running Bento -->
+<section class="py-32">
+<div class="max-w-7xl mx-auto px-6">
+<h2 class="text-4xl md:text-5xl font-bold text-white text-center mb-20 tracking-tight">The Engineering of <span class="text-primary">Performance</span><span class="text-[10px] font-mono text-slate-600 ml-2">// EN</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-neutral-dark border border-white/5 p-10 rounded-xl hover:border-primary/30 transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block">database</span>
+<h3 class="text-xl font-bold text-white mb-4">Data-driven Training</h3>
+<p class="text-slate-400 leading-relaxed">Treating heart rate variability and VO2 Max like server latency. Constant monitoring, constant adjustment.</p>
+</div>
+<div class="bg-neutral-dark border border-white/5 p-10 rounded-xl hover:border-primary/30 transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block">rebase_edit</span>
+<h3 class="text-xl font-bold text-white mb-4">Habit System</h3>
+<p class="text-slate-400 leading-relaxed">Building a training protocol that runs on autopilot. Removing decision fatigue through algorithmic consistency.</p>
+</div>
+<div class="bg-neutral-dark border border-white/5 p-10 rounded-xl hover:border-primary/30 transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block">analytics</span>
+<h3 class="text-xl font-bold text-white mb-4">Performance Tools</h3>
+<p class="text-slate-400 leading-relaxed">Custom scripts and open-source stacks to visualize Strava data and predict peak race-day readiness.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Blog Section -->
+<section class="py-32 border-t border-white/5 bg-background-dark/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-12">
+<h2 class="text-4xl font-bold text-white mb-8">Detailed Training Log<span class="text-[10px] font-mono text-slate-600 ml-2">// EN</span><span class="text-[10px] font-mono text-slate-600 ml-2">// EN</span></h2>
+<!-- Filter/Sub-header Row -->
+<div class="flex flex-wrap items-center gap-6 border-b border-white/5 pb-6 mb-8 text-xs font-bold tracking-widest uppercase">
+<button class="text-primary border-b-2 border-primary pb-2">All Activities</button>
+<button class="text-slate-500 hover:text-white transition-colors pb-2">Workouts</button>
+<button class="text-slate-500 hover:text-white transition-colors pb-2">Long Runs</button>
+<button class="text-slate-500 hover:text-white transition-colors pb-2">Races</button>
+<div class="ml-auto flex items-center gap-2 text-slate-500">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    FILTER BY MONTH
+                </div>
+</div>
+</div>
+<!-- Log Table Container -->
+<div class="glass-card rounded-xl overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-slate-500 text-[10px] uppercase tracking-widest border-b border-white/5">
+<th class="px-6 py-4 font-bold">Date</th>
+<th class="px-6 py-4 font-bold">Activity Name</th>
+<th class="px-6 py-4 font-bold">Distance</th>
+<th class="px-6 py-4 font-bold">Time</th>
+<th class="px-6 py-4 font-bold">Avg Pace</th>
+<th class="px-6 py-4 font-bold">Elevation</th>
+<th class="px-6 py-4 font-bold">Effort/HR</th>
+<th class="px-6 py-4 font-bold">Status</th>
+</tr>
+</thead>
+<tbody class="text-sm font-mono">
+<!-- Row 1 -->
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors group">
+<td class="px-6 py-5 text-slate-400">OCT 24</td>
+<td class="px-6 py-5 text-white font-medium">Tempo Intervals: 5x1km</td>
+<td class="px-6 py-5 text-white">12.50 km</td>
+<td class="px-6 py-5 text-white">55:20</td>
+<td class="px-6 py-5 text-primary font-bold">4:25 /km</td>
+<td class="px-6 py-5 text-slate-400">120m</td>
+<td class="px-6 py-5"><span class="px-2 py-0.5 rounded border border-orange-500/30 text-orange-500 text-[10px]">Z4</span></td>
+<td class="px-6 py-5"><div class="flex items-center gap-2 text-[10px] text-primary font-bold"><div class="w-1.5 h-1.5 rounded-full bg-primary"></div> BEST EFFORT</div></td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 text-slate-400">OCT 22</td>
+<td class="px-6 py-5 text-white font-medium">Z2 Base Building</td>
+<td class="px-6 py-5 text-white">8.20 km</td>
+<td class="px-6 py-5 text-white">45:10</td>
+<td class="px-6 py-5 text-white">5:30 /km</td>
+<td class="px-6 py-5 text-slate-400">45m</td>
+<td class="px-6 py-5"><span class="px-2 py-0.5 rounded border border-blue-500/30 text-blue-500 text-[10px]">Z2</span></td>
+<td class="px-6 py-5 text-slate-600 text-[10px]">RECOVERY</td>
+</tr>
+<!-- Row 3 -->
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 text-slate-400">OCT 20</td>
+<td class="px-6 py-5 text-white font-medium">Sunday Long Run</td>
+<td class="px-6 py-5 text-white">28.00 km</td>
+<td class="px-6 py-5 text-white">2:25:12</td>
+<td class="px-6 py-5 text-white">5:11 /km</td>
+<td class="px-6 py-5 text-slate-400">410m</td>
+<td class="px-6 py-5"><span class="px-2 py-0.5 rounded border border-green-500/30 text-green-500 text-[10px]">Z3</span></td>
+<td class="px-6 py-5"><div class="flex items-center gap-2 text-[10px] text-primary font-bold"><div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div> COMPLETED</div></td>
+</tr>
+<!-- Row 4 -->
+<tr class="border-b border-white/5 hover:bg-white/5 transition-colors">
+<td class="px-6 py-5 text-slate-400">OCT 18</td>
+<td class="px-6 py-5 text-white font-medium">Hill Sprints 10x200m</td>
+<td class="px-6 py-5 text-white">10.00 km</td>
+<td class="px-6 py-5 text-white">52:45</td>
+<td class="px-6 py-5 text-white">5:16 /km</td>
+<td class="px-6 py-5 text-white">245m</td>
+<td class="px-6 py-5"><span class="px-2 py-0.5 rounded border border-red-500/30 text-red-500 text-[10px]">Z5</span></td>
+<td class="px-6 py-5 text-slate-600 text-[10px]">STRENGTH</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8 text-center">
+<button class="text-xs font-bold tracking-widest uppercase text-slate-500 hover:text-primary transition-colors flex items-center justify-center gap-2 mx-auto">
+                LOAD MORE DATA <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</div>
+</section><section class="py-32 border-t border-white/5 bg-background-dark">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-16">
+<h2 class="text-4xl font-bold text-white">Latest from the Log<span class="text-[10px] font-mono text-slate-600 ml-2">// EN</span></h2>
+<a class="text-primary text-sm font-bold tracking-widest uppercase hover:underline" href="#">View All Posts</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<!-- Card 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden mb-6 bg-neutral-dark border border-white/5">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 opacity-60 group-hover:opacity-100" data-alt="Modern running shoes on dark urban street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA963nRtp0Zd48lmqSFJaH5APkZESSB1113DrHQrtbySX8ezed_N6XhZOyLejAKxRF8MEMkzwXeayhrBgffLUCwnZ60iE5YbeY-k1uxHxPXN3HmopmNYV9eMkNllrjDYEWcWGNeK0KI6CuI5luRnrT2rbrROKIXn8-voimTQ3LxUrQwLkXGtne0NfPrucTH3GSoJAZXwxlACwswKC0HZznTseur_tUmFWeMUYa9xgPbyYjjZdO6u0V1biG6WrY22bYwdFv3F9B2NYw"/>
+</div>
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors mb-3 leading-tight">Training Strategies for the Async Engineer</h3>
+<p class="text-slate-400 text-sm leading-relaxed">How to balance high-focus coding sessions with zone 2 aerobic base building.</p>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden mb-6 bg-neutral-dark border border-white/5">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 opacity-60 group-hover:opacity-100" data-alt="Smartwatch displaying health metrics in the dark" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxjt6ykmBCFrb8Q-TlAubPvT3WVXg_9ioaNQ2qqN3JxGhWsoK4e9G5jaJQ3-iFxfy_GF7rOZCUALQveNcjeIN8OGXGAqzcD8-3jRIg0pp2VsoEB2kBM_J1gnil4vmlALOwWLAeREig1KaFt4SzlwA4n1iNU712rsYSKFDU1NJhjcw9w04eAxPCit1EvUt2zESTqWYxlJ3Z0N9RzHU_jxAK61FUlBQiY8Tg8osg28bLqiyGy3TT1-ve5nrEv46A8qAYC-Fwr-gJslw"/>
+</div>
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors mb-3 leading-tight">The 2024 Tech Stack for Runners</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Reviewing the sensors and software that actually provide actionable insights.</p>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-video rounded-xl overflow-hidden mb-6 bg-neutral-dark border border-white/5">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 opacity-60 group-hover:opacity-100" data-alt="A runner silhouetted against a futuristic city sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR9VzvX6d8YLSoT8EB2rDu7nPEMh_QqEcD8-8paztw87FeipIIOMAEUkp2-Lcv2E1I1wRqJa42nmNzvzCuGXI-3vfRxwgLZPOOsVObLcZnbPbyfKYfk8zCJii0GinA4Vi7YMdwUYIjja3J2ga-3dqQcppjob5HNL-p7rQZxHD6GYkZmVdsURPKSqupUqjwHSmg3qkXE56LZbiROv2gmdxjFBg3gglnT4SIgcRo4XVZsqiq9pc5SAyM-KTpI-KQK_H4KOAL_d9lfH8"/>
+</div>
+<h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors mb-3 leading-tight">Refactoring My Running Form</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Applying engineering principles to biomechanical optimization and injury prevention.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-32 px-6">
+<div class="max-w-4xl mx-auto bg-primary rounded-2xl p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 hero-lines"></div>
+<div class="relative z-10">
+<h2 class="text-background-dark text-4xl md:text-5xl font-black mb-6 leading-tight">JOIN THE DEV RUNNERS COMMUNITY<span class="text-[10px] font-mono text-slate-600 ml-2">// EN</span></h2>
+<p class="text-background-dark/80 text-lg mb-12 max-w-lg mx-auto font-medium">Weekly insights on performance, tech, and the marathon mindset. No spam, just pure data.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<input class="flex-1 bg-background-dark/10 border-background-dark/20 text-background-dark placeholder:text-background-dark/50 rounded-lg py-4 px-6 focus:ring-background-dark border-2" placeholder="ENTER YOUR EMAIL" type="email"/>
+<button class="bg-background-dark text-primary font-black px-8 py-4 rounded-lg hover:scale-105 transition-transform uppercase">Subscribe</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-20 border-t border-white/5">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex flex-col items-center md:items-start gap-4">
+<span class="text-primary font-black text-lg tracking-tighter">CODE. RUN. REPEAT.</span>
+<p class="text-slate-500 text-xs tracking-widest uppercase">© 2024 PERSISTENCE PROTOCOL. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-400 hover:text-primary flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">code</span> GITHUB
+                </a>
+<a class="text-slate-400 hover:text-primary flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">timeline</span> STRAVA
+                </a>
+<a class="text-slate-400 hover:text-primary flex items-center gap-2 text-sm font-bold tracking-widest uppercase transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">link</span> LINKEDIN
+                </a>
+</div>
+</div>
+</footer>
+</body></html>
