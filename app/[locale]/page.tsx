@@ -9,11 +9,8 @@ import { BlogPreviewSection } from "@/components/sections/BlogPreviewSection";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { getAthleteStats, getRecentActivities } from "@/lib/strava";
 
-interface HomePageProps {
-    params: { locale: string };
-}
 
-export default async function HomePage({ params: { locale } }: HomePageProps) {
+export default async function HomePage() {
     const statsCode = getAthleteStats();
     const activitiesCode = getRecentActivities(30, 1);
 
