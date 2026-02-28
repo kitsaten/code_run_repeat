@@ -3,23 +3,80 @@
 import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { StravaActivity } from "@/types/strava";
 
-export function TrainingLogSection() {
+interface TrainingLogSectionProps {
+    activities: StravaActivity[];
+}
+
+export function TrainingLogSection({ activities }: TrainingLogSectionProps) {
     const t = useTranslations("training_log");
     const locale = useLocale();
     const [activeFilter, setActiveFilter] = useState("all");
     const [isLoading, setIsLoading] = useState(false);
 
-    const activities = [
-        { date: "OCT 24", name: "Tempo Intervals: 5x1km", dist: "12.50 km", time: "55:20", pace: "4:25 /km", elev: "120m", zone: "Z4", zoneColor: "border-orange-500/30 text-orange-500", status: "BEST EFFORT", type: "workouts" },
-        { date: "OCT 22", name: "Z2 Base Building", dist: "8.20 km", time: "45:10", pace: "5:30 /km", elev: "45m", zone: "Z2", zoneColor: "border-blue-500/30 text-blue-500", status: "RECOVERY", type: "all" },
-        { date: "OCT 20", name: "Sunday Long Run", dist: "28.00 km", time: "2:25:12", pace: "5:11 /km", elev: "410m", zone: "Z3", zoneColor: "border-green-500/30 text-green-500", status: "COMPLETED", type: "long_runs" },
-        { date: "OCT 18", name: "Hill Sprints 10x200m", dist: "10.00 km", time: "52:45", pace: "5:16 /km", elev: "245m", zone: "Z5", zoneColor: "border-red-500/30 text-red-500", status: "STRENGTH", type: "workouts" },
-    ];
+    // Format pace
+    const formatPace = (speedMs: number) => {
+        if (!speedMs) return "-:--";
+        const minsPerKm = 1000 / speedMs / 60;
+        const mins = Math.floor(minsPerKm);
+        const secs = Math.floor((minsPerKm - mins) * 60).toString().padStart(2, '0');
+        return `${mins}:${secs}`;
+    };
+
+    // Format time
+    const formatTime = (seconds: number) => {
+        const hrs = Math.floor(seconds / 3600);
+        const mins = Math.floor((seconds % 3600) / 60);
+        const secs = seconds % 60;
+        if (hrs > 0) {
+            return `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+
+    // Format date
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        return date.toLocaleDateString(locale === "vi" ? "vi-VN" : "en-US", { month: "short", day: "numeric" }).toUpperCase();
+    };
+
+    // Map Strava activity to table format
+    const formattedActivities = activities.map(act => {
+        // Derive some faux stats based on heart rate or type for visual flair
+        let zone = "Z2";
+        let zoneColor = "border-blue-500/30 text-blue-500";
+        let status = "BASE";
+        let type = "all";
+
+        if (act.average_heartrate) {
+            if (act.average_heartrate > 165) { zone = "Z5"; zoneColor = "border-red-500/30 text-red-500"; status = "MAX EFFORT"; type = "workouts"; }
+            else if (act.average_heartrate > 150) { zone = "Z4"; zoneColor = "border-orange-500/30 text-orange-500"; status = "THRESHOLD"; type = "workouts"; }
+            else if (act.average_heartrate > 135) { zone = "Z3"; zoneColor = "border-green-500/30 text-green-500"; status = "TEMPO"; type = "long_runs"; }
+        }
+
+        if (act.distance > 20000) { type = "long_runs"; } // 20km+ is a long run
+        if (act.name.toLowerCase().includes("race")) { type = "races"; status = "RACE"; zoneColor = "border-purple-500/30 text-purple-500"; }
+        if (act.name.toLowerCase().includes("workout") || act.name.toLowerCase().includes("interval")) { type = "workouts"; }
+
+        return {
+            date: formatDate(act.start_date),
+            name: act.name,
+            dist: `${(act.distance / 1000).toFixed(2)} km`,
+            time: formatTime(act.moving_time),
+            pace: `${formatPace(act.average_speed)} /km`,
+            elev: `${Math.round(act.total_elevation_gain)}m`,
+            zone,
+            zoneColor,
+            status,
+            type,
+            raw: act,
+        };
+    });
 
     const filteredActivities = activeFilter === "all"
-        ? activities
-        : activities.filter(a => a.type === activeFilter);
+        ? formattedActivities
+        : formattedActivities.filter(a => a.type === activeFilter);
 
     const handleLoadMore = () => {
         setIsLoading(true);
@@ -91,7 +148,7 @@ export function TrainingLogSection() {
                                     <td className="px-6 py-5 text-primary font-bold">{act.pace}</td>
                                     <td className="px-6 py-5 text-slate-400">{act.elev}</td>
                                     <td className="px-6 py-5">
-                                        <span className={`px-2 py-0.5 rounded border ${act.zoneColor} text-[10px]`}>{act.zone}</span>
+                                        <span className={`px-2 py-0.5 rounded border ${act.zoneColor} text-[10px]`}>{act.zone}{act.raw.average_heartrate ? ` (${Math.round(act.raw.average_heartrate)}bpm)` : ''}</span>
                                     </td>
                                     <td className="px-6 py-5">
                                         <div className="flex items-center gap-2 text-[10px] text-primary font-bold">
