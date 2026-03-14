@@ -42,6 +42,9 @@
         "weekly_mileage": "Mileage Tuần",
         "current_pace": "Pace Hiện Tại",
         "marathon_pr": "PR Marathon",
+        "longest_run_recent": "Chạy Dài Nhất (Gần Đây)",
+        "recent_runs_count": "Số Lần Chạy (Gần Đây)",
+        "total_time": "Tổng Thời Gian",
         "total_elevation": "Tổng Độ Cao",
         "active_streak": "Chuỗi Hoạt Động",
         "last_run": "Lần Chạy Cuối",
@@ -76,6 +79,7 @@
         "title": "Nhật Ký Tập Luyện Chi Tiết",
         "filters": {
             "all": "Tất Cả Hoạt Động",
+            "run": "Chạy bộ",
             "workouts": "Bài Tập",
             "long_runs": "Chạy Dài",
             "races": "Giải Đua",

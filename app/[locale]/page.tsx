@@ -27,10 +27,10 @@ export default async function HomePage() {
             <Navbar />
             <main>
                 <HeroSection />
-                <AboutSection />
-                <StatsSection stats={stats} lastRun={lastRun} />
-                <TechSection />
                 <TrainingLogSection activities={activities} />
+                <AboutSection />
+                <StatsSection stats={stats} lastRun={lastRun} activities={activities} />
+                <TechSection />
                 <BlogPreviewSection />
                 <NewsletterSection />
             </main>

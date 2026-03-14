@@ -42,6 +42,9 @@
         "weekly_mileage": "Weekly Mileage",
         "current_pace": "Current Pace",
         "marathon_pr": "Marathon PR",
+        "longest_run_recent": "Longest Run (Recent)",
+        "recent_runs_count": "Recent Runs",
+        "total_time": "Total Time",
         "total_elevation": "Total Elevation",
         "active_streak": "Active Streak",
         "last_run": "Last Run",
@@ -76,6 +79,7 @@
         "title": "Detailed Training Log",
         "filters": {
             "all": "All Activities",
+            "run": "Running",
             "workouts": "Workouts",
             "long_runs": "Long Runs",
             "races": "Races",

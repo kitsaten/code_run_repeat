@@ -6,9 +6,10 @@ import { StravaStats, StravaActivity } from "@/types/strava";
 interface StatsSectionProps {
     stats: StravaStats | null;
     lastRun: StravaActivity | null;
+    activities: StravaActivity[];
 }
 
-export function StatsSection({ stats, lastRun }: StatsSectionProps) {
+export function StatsSection({ stats, lastRun, activities }: StatsSectionProps) {
     const t = useTranslations("stats");
     const locale = useLocale();
 
@@ -40,6 +41,15 @@ export function StatsSection({ stats, lastRun }: StatsSectionProps) {
         if (days > 0) return `${days} days ago`;
         return `${hours} hours ago`;
     })() : "-";
+
+    const runsOnly = activities.filter(a => a.type === "Run");
+    const longestRun = runsOnly.length > 0 ? runsOnly.reduce((prev, current) => (prev.distance > current.distance) ? prev : current) : null;
+    const longestRunDistance = longestRun ? formatDistance(longestRun.distance) : "0";
+    const longestRunPace = longestRun ? formatPace(longestRun.average_speed) : "-:--";
+
+    const totalTimeHours = stats ? Math.floor(stats.all_run_totals.moving_time / 3600) : 0;
+    const totalTimeMins = stats ? Math.floor((stats.all_run_totals.moving_time % 3600) / 60) : 0;
+    const recentRunsCount = stats ? stats.recent_run_totals.count : 0;
 
 
     return (
@@ -94,11 +104,11 @@ export function StatsSection({ stats, lastRun }: StatsSectionProps) {
 
                     {/* Stat Card 4 */}
                     <div className="glass-card p-8 rounded-xl">
-                        <p className="text-slate-400 text-sm font-medium mb-1">{t("marathon_pr")}</p>
-                        <p className="text-4xl font-black text-white mb-4">3:26:15</p>
+                        <p className="text-slate-400 text-sm font-medium mb-1">{t("longest_run_recent")}</p>
+                        <p className="text-4xl font-black text-white mb-4">{longestRunDistance} <span className="text-lg font-normal text-slate-500">{t("unit_km")}</span></p>
                         <div className="flex items-center gap-2 text-slate-500 text-xs font-bold">
                             <span className="material-symbols-outlined text-sm">military_tech</span>
-                            {t("status_boston")}
+                            {longestRunPace} {t("unit_pace")}
                         </div>
                     </div>
 
@@ -114,8 +124,8 @@ export function StatsSection({ stats, lastRun }: StatsSectionProps) {
 
                     {/* Stat Card 6 */}
                     <div className="glass-card p-8 rounded-xl">
-                        <p className="text-slate-400 text-sm font-medium mb-1">{t("active_streak")}</p>
-                        <p className="text-4xl font-black text-white mb-4">1 <span className="text-lg font-normal text-slate-500">{t("unit_days")}</span></p>
+                        <p className="text-slate-400 text-sm font-medium mb-1">{t("recent_runs_count")}</p>
+                        <p className="text-4xl font-black text-white mb-4">{recentRunsCount}</p>
                         <div className="flex items-center gap-2 text-orange-500 text-xs font-bold">
                             <span className="material-symbols-outlined text-sm">local_fire_department</span>
                             {t("status_heat")}
@@ -125,14 +135,14 @@ export function StatsSection({ stats, lastRun }: StatsSectionProps) {
                     {/* Stat Card 7 */}
                     <div className="glass-card p-8 rounded-xl">
                         <p className="text-slate-400 text-sm font-medium mb-1">{t("last_run")}</p>
-                        <p className="text-xl font-bold text-white mb-1">{lastRunDistance} km | {currentPace}/km</p>
+                        <p className="text-xl font-bold text-white mb-1">{lastRunDistance} km | {currentPace}{t("unit_pace")}</p>
                         <p className="text-slate-500 text-xs font-mono uppercase">{lastRunTimeCalc}</p>
                     </div>
 
                     {/* Stat Card 8 */}
                     <div className="glass-card p-8 rounded-xl">
-                        <p className="text-slate-400 text-sm font-medium mb-1">{t("shoes")}</p>
-                        <p className="text-xl font-bold text-white mb-4">Alphafly 3 <span className="text-primary">- 340km</span></p>
+                        <p className="text-slate-400 text-sm font-medium mb-1">{t("total_time")}</p>
+                        <p className="text-4xl font-black text-white mb-4">{totalTimeHours}<span className="text-lg font-normal text-slate-500">h</span> {totalTimeMins}<span className="text-lg font-normal text-slate-500">m</span></p>
                         <div className="h-1 bg-white/5 rounded-full overflow-hidden">
                             <div className="h-full bg-primary/40 w-[42%]"></div>
                         </div>

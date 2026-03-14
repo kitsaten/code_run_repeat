@@ -12,7 +12,7 @@ interface TrainingLogSectionProps {
 export function TrainingLogSection({ activities }: TrainingLogSectionProps) {
     const t = useTranslations("training_log");
     const locale = useLocale();
-    const [activeFilter, setActiveFilter] = useState("all");
+    const [activeFilter, setActiveFilter] = useState("run");
     const [isLoading, setIsLoading] = useState(false);
 
     // Format pace
@@ -76,7 +76,10 @@ export function TrainingLogSection({ activities }: TrainingLogSectionProps) {
 
     const filteredActivities = activeFilter === "all"
         ? formattedActivities
-        : formattedActivities.filter(a => a.type === activeFilter);
+        : formattedActivities.filter(a => {
+            if (activeFilter === "run") return a.raw.type === "Run";
+            return a.type === activeFilter;
+        });
 
     const handleLoadMore = () => {
         setIsLoading(true);
@@ -98,6 +101,12 @@ export function TrainingLogSection({ activities }: TrainingLogSectionProps) {
                             className={cn("transition-colors pb-2 border-b-2", activeFilter === "all" ? "text-primary border-primary" : "text-slate-500 border-transparent hover:text-white")}
                         >
                             {t("filters.all")}
+                        </button>
+                        <button
+                            onClick={() => setActiveFilter("run")}
+                            className={cn("transition-colors pb-2 border-b-2", activeFilter === "run" ? "text-primary border-primary" : "text-slate-500 border-transparent hover:text-white")}
+                        >
+                            {t("filters.run")}
                         </button>
                         <button
                             onClick={() => setActiveFilter("workouts")}

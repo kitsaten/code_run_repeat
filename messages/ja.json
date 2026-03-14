@@ -42,6 +42,9 @@
         "weekly_mileage": "週間走行距離",
         "current_pace": "現在のペース",
         "marathon_pr": "マラソン自己ベスト",
+        "longest_run_recent": "最近の最長ラン",
+        "recent_runs_count": "最近のラン回数",
+        "total_time": "総実行時間",
         "total_elevation": "累計獲得標高",
         "active_streak": "連続活動日数",
         "last_run": "最終ラン",
@@ -76,6 +79,7 @@
         "title": "詳細なトレーニングログ",
         "filters": {
             "all": "すべての活動",
+            "run": "ランニング",
             "workouts": "ワークアウト",
             "long_runs": "ロングラン",
             "races": "レース",
